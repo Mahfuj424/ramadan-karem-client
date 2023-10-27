@@ -9,6 +9,7 @@ import { FaPlaneDeparture } from "react-icons/fa";
 import { HiOutlineLogout } from "react-icons/hi";
 import { AuthContext } from '../../Components/authProvider/AuthProvider';
 
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const { user, logOut } = useContext(AuthContext)
