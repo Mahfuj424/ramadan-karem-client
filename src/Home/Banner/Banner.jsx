@@ -13,6 +13,7 @@ const Banner = () => {
                     <FaInstagramSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md"/>
                     <FaTwitterSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md"/>
                </div>
+               
           </div>
      );
 };
