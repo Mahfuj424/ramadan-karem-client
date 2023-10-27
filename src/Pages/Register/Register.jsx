@@ -2,8 +2,7 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
-import useTitle from '../../../../Title/useTitle';
-import { AuthContext } from '../../Components/authProvider/AuthProvider';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 const Register = () => {
@@ -11,8 +10,6 @@ const Register = () => {
     const navigate = useNavigate();
 
     const [error, setError] = useState('');
-
-    useTitle('register')
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -64,7 +61,7 @@ const Register = () => {
     
     return (
         <div>
-            <div className="hero min-h-screen mt-5">
+            <div className="hero min-h-screen">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold text-center">Please Register</h1>
@@ -101,11 +98,11 @@ const Register = () => {
                             </div>
                             <p className='text-error'>{error}</p>
                             <div className="form-control mt-6">
-                                <button className="btn btn-primary">Register</button>
+                                <button className="btn btn-info">Register</button>
                             </div>
                             <p>You have already an account? <Link className='btn-link' to='/login'>Please Login</Link></p>
                             <div>
-                                <button className='btn btn-outline w-full hover:bg-blue-700' onClick={handleGoogleUser}><span><FcGoogle/></span>Google</button>
+                                <button className=' w-full button' onClick={handleGoogleUser}><span><FcGoogle/></span>Google</button>
                             </div>
                         </form>
                     </div>

@@ -1,21 +1,22 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import React, { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import {
     getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut,
     signInWithEmailAndPassword, GoogleAuthProvider,
-    signInWithPopup, updateProfile
+    signInWithPopup, GithubAuthProvider, updateProfile
 } from "firebase/auth";
 import { app } from '../../../firebase/firebase-config';
 
 export const AuthContext = createContext();
+
 const auth = getAuth(app)
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
     const [loading, setLoading] = useState(true)
     const [reload, setReload] = useState()
+    console.log(user);
     
     const registerUser = (email, password) => {
         setLoading(true)
@@ -52,8 +53,15 @@ const AuthProvider = ({ children }) => {
         return signInWithPopup(auth, googleProvider)
     }
 
+    const githubUser = () => {
+        setLoading(true)
+        return signInWithPopup(auth, githubProvider)
+    }
+
+    
 
     const updateUserProfile = (name, imgURL) => {
+        console.log(name,imgURL);
         return updateProfile(auth.currentUser, {
                     displayName: name,
                     photoURL : imgURL,
@@ -69,15 +77,14 @@ const AuthProvider = ({ children }) => {
         logOut,
         loginUser,
         googleUser,
+        githubUser,
         setReload
         
     };
 
 
     return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
-        </AuthContext.Provider>
+        <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
     );
 };
 

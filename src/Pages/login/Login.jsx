@@ -2,8 +2,7 @@
 import React, { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from "react-icons/fc";
-import useTitle from '../../../Title/useTitle';
-import { AuthContext } from '../../Components/authProvider/AuthProvider';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
     const { loginUser, googleUser } = useContext(AuthContext);
@@ -11,7 +10,7 @@ const Login = () => {
     const location = useLocation()
     const pathName = location.state?.from?.pathname || '/'
 
-    useTitle('login')
+    
 
 
     const handleSubmit = (e) => {
@@ -21,27 +20,8 @@ const Login = () => {
         const password = form.password.value;
         if ((email, password)) {
             loginUser(email, password)
-                .then((result) => {
-                    const user = result.user;
-                    const loggedUser = {
-                        email: user.email
-                    }
-                    fetch(`http://localhost:5000/jwt`, {
-                        method: 'POST',
-                        headers: {
-                            'content-type': 'application/json'
-                        },
-                        body: JSON.stringify(loggedUser)
-                    })
-                        .then(res => res.json())
-                        .then(data => {
-                            console.log('aeroplane token access', data);
-                            localStorage.setItem('aeroplane', data.token)
-                        })
-                    navigate(pathName)
-                })
-                .catch(error => {
-                    console.log(error.message);
+                .then(data => {
+                    console.log(data);
                 })
         }
     }
@@ -60,7 +40,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero min-h-screen mt-5">
+            <div className="hero min-h-screen">
                 <div className="hero-content flex-col">
                     <div className="text-center lg:text-left">
                         <h1 className="text-5xl font-bold text-center">Please Login</h1>
