@@ -6,7 +6,7 @@ const ReadQuran = () => {
                <div className="w-[100%] md:flex">
                     <div className="md:w-3/4 mt-10 md:mt-0 md:flex items-center justify-around">
                          <div>
-                              <img className="w-96 mx-auto h-80" src="https://i.ibb.co/7k55PGZ/quran.jpg" alt="" />
+                              <img className="w-96 md:w-[400px] mx-auto h-80" src="https://i.ibb.co/7k55PGZ/quran.jpg" alt="" />
                          </div>
                          <div className="md:mt-0 mt-10 md:px-0 px-3">
                               <h1 className="text-5xl font-bold">Every Day try to <br /> <span className="text-purple-400">read quran</span></h1>
