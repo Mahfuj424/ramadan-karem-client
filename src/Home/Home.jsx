@@ -1,10 +1,14 @@
+import ExtraStudy from "../Components/ExtraStudy/ExtraStudy";
+import ReadQuran from "../Components/ReadQuran/ReadQuran";
 import Banner from "./Banner/Banner";
 
 
 const Home = () => {
      return (
-          <div>
-               <Banner/>
+          <div className="">
+               <Banner />
+               <ReadQuran />
+               <ExtraStudy/>
           </div>
      );
 };

@@ -6,3 +6,7 @@
 .container{
      @apply max-w-screen-xl mx-auto 
 }
+
+.button{
+     @apply btn bg-purple-400 hover:bg-purple-600 border-none font-bold
+}
