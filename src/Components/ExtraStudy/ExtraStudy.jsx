@@ -17,11 +17,11 @@ const ExtraStudy = () => {
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                             <div>
 
-                                <p className='text-4xl'><span className='text-5xl font-bold text-blue-400'>Research From The</span> World’s <br /> Leading Experts</p>
+                                <p className='text-4xl font-bold'><span className='text-5xl font-bold text-blue-400'>Research From The</span> Quran</p>
                                 <p>Nullam suscipit id ante bibendum bibendum. Vivamus interdum gravida justo id venenatis. tempus velit sed, lobortis metus. Donec id tincidunt libero, eget dapibus quam. Aenean felis ex, blandit pretium pharetra eu.</p>
                                 <button className='button mt-5'>Sign Up Now</button>
                             </div>
-                            <div className='grid grid-cols-2 gap-5'>
+                            {/* <div className='grid grid-cols-2 gap-5'>
                                 <div className='border bg-white rounded-lg w-36 h-36 flex items-center justify-center'>
                                     <div><MdScience className='w-20 h-20' />
                                         <h2 className="absolute  text-lg text-black ">Science</h2>
@@ -42,7 +42,7 @@ const ExtraStudy = () => {
                                         <h2 className="absolute  text-lg text-black ">Marketing</h2>
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </div>
