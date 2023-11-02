@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Styles.css"
 import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare } from "react-icons/fa";
 
@@ -12,11 +13,17 @@ const Banner = () => {
                     <h1 className="text-5xl italic md:pt-48 pt-10 font-bold text-white">𝕋𝕣𝕪 𝕥𝕠 𝕙𝕒𝕧𝕖<br /> 𝕋𝕙𝕖 𝕓𝕖𝕤𝕥 𝕥𝕚𝕞𝕖 𝕪𝕠𝕦 𝕔𝕒𝕟</h1>
                </div>
                <div className="text-white text-4xl flex absolute bottom-5 right-10 gap-5">
-                    <FaFacebookSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md"/>
-                    <FaInstagramSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md"/>
-                    <FaTwitterSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md"/>
+                    <Link to={`https://web.facebook.com/profile.php?id=100048917382639`}>
+                         <FaFacebookSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md" />
+                    </Link>
+                    <Link to={`https://www.instagram.com/ahmed__mahfuj_11/`}>
+                         <FaInstagramSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md" />
+                    </Link>
+                    <Link to={`https://twitter.com/AhmedMahfu_11`}>
+                         <FaTwitterSquare className="bg-purple-800 p-1 rounded-lg shadow-2xl hover:shadow-md" />
+                    </Link>
                </div>
-               
+
           </div>
      );
 };

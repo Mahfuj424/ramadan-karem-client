@@ -10,7 +10,7 @@ const Navbar = () => {
 
      const navItem = <div className='md:space-x-8 space-y-3 text-white md:text-black items-center md:space-y-0 pb-2 mb:pb-0 md:flex'>
           <p className='text-lg hover:text-white transition-all'><NavLink className={({ isActive }) => isActive ? 'border-b-2 pb-2 text-white border-white' : ''} to='/'>Home</NavLink></p>
-          <p className='text-lg hover:text-white transition-all'><NavLink className={({ isActive }) => isActive ? 'border-b-2 pb-2 text-white border-white' : ''} to='/schedule'>Schedule</NavLink></p>
+          <p className='text-lg hover:text-white transition-all'><NavLink className={({ isActive }) => isActive ? 'border-b-2 pb-2 text-white border-white' : ''} to='/iftarItems'>Iftar Items</NavLink></p>
 
      
           <p className='text-lg hover:text-white transition-all '> {
