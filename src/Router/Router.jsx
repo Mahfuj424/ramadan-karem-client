@@ -9,6 +9,7 @@ import Register from "../Pages/Register/Register";
 import IftarItems from "../Pages/IftarItems/IftarItems";
 import IftarDetails from "../Pages/iftarDetails/iftarDetails";
 import PrivetRoute from "../Components/privetRoute/PrivetRoute";
+import FavoriteItems from "../Pages/FavoriteITems/FavoriteItems";
 
 
 
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
                     path: 'iftarDetails/:id',
                     element: <PrivetRoute><IftarDetails /></PrivetRoute>,
                     loader: () => fetch(`http://localhost:5000/iftar`)
+               },
+               {
+                    path: "favorite",
+                    element: <FavoriteItems />
                },
                {
                     path: "login",

@@ -10,3 +10,7 @@
 .button{
      @apply btn bg-purple-500 hover:bg-purple-600 border-none font-bold
 }
+
+.button2{
+     @apply btn bg-red-500 hover:bg-red-600 border-none font-bold
+}

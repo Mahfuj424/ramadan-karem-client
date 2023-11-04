@@ -28,26 +28,26 @@ const IftarDetails = () => {
         // toast('Added Favorite')
 
         console.log(iftarItems);
-            // fetch(`http://localhost:5000/addFavorite`,
-            //     {
-            //         method: "POST",
-            //         headers: {
-            //             'content-type': 'application/json'
-            //         },
-            //         body: JSON.stringify(addFavorite)
-            //     })
-            //     .then(res => res.json())
-            //     .then(data => {
-            //         if (data.insertedId) {
-            //             Swal.fire({
-            //                  position: 'center',
-            //                  icon: 'success',
-            //                  title: 'Successfully Add Class',
-            //                  showConfirmButton: false,
-            //                  timer: 1500
-            //             })
-            //        }
-            //     })
+            fetch(`http://localhost:5000/addFavorite`,
+                {
+                    method: "POST",
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(addFavorite)
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.insertedId) {
+                        Swal.fire({
+                             position: 'center',
+                             icon: 'success',
+                             title: 'Favorite Item',
+                             showConfirmButton: false,
+                             timer: 1500
+                        })
+                   }
+                })
        
 
         setDisible(true)
@@ -59,7 +59,7 @@ const IftarDetails = () => {
             <h1 className='text-3xl text-center mt-5'>Food Details</h1>
             <div className="hero min-h-screen rounded-xl shadow-xl bg-[#e36bf9] my-10">
                 <div className="hero-content flex flex-col">
-                    <img src={foodImage} className="w-[70%] h-[400px] rounded-lg shadow-2xl" alt='Toy Image' />
+                    <img src={foodImage} className="w-[70%] md:h-[400px] h-[250px] rounded-lg shadow-2xl" alt='Toy Image' />
                     <div className='w-[70%]  rounded-xl shadow-2xl p-3 border-4 flex-col gap-3 pl-5'>
                         <h1 className="py-3 text-2xl font-bold"><span className='font-bold'></span> {foodName}</h1>
                         <h2><span className='font-bold'>chef Name:</span> {chefName}</h2>

@@ -11,8 +11,13 @@ const Navbar = () => {
      const navItem = <div className='md:space-x-8 space-y-3 text-white md:text-black items-center md:space-y-0 pb-2 mb:pb-0 md:flex'>
           <p className='text-lg hover:text-white transition-all'><NavLink className={({ isActive }) => isActive ? 'border-b-2 pb-2 text-white border-white' : ''} to='/'>Home</NavLink></p>
           <p className='text-lg hover:text-white transition-all'><NavLink className={({ isActive }) => isActive ? 'border-b-2 pb-2 text-white border-white' : ''} to='/iftarItems'>Iftar Items</NavLink></p>
+          <p className='text-lg hover:text-white transition-all'>
+               {user ?
+                    <NavLink className={({ isActive }) => isActive ? 'border-b-2 pb-2 text-white border-white' : ''} to='/favorite'>Favorite Items</NavLink>
+                    : ''}
+          </p>
 
-     
+
           <p className='text-lg hover:text-white transition-all '> {
                user ?
                     <NavLink onClick={() => logOut()}><span className='flex items-center gap-1'>
@@ -37,14 +42,14 @@ const Navbar = () => {
                               </ul>
                          </div>
                          <Link to='/' className="text-xl  flex items-center cursor-pointer">
-                               <span className='text-black text-3xl font-bold ms-2'><BsMoonStarsFill/></span>
+                              <span className='text-black text-3xl font-bold ms-2'><BsMoonStarsFill /></span>
                          </Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
                          <ul className="menu menu-horizontal items-center px-1">
                               {navItem}
                          </ul>
-                         
+
                     </div>
                     <div className="navbar-end pe-3">
                          <div className="avatar">
