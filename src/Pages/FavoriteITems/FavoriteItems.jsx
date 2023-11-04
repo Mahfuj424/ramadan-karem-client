@@ -38,7 +38,7 @@ const FavoriteItems = () => {
                     <div className="container grid md:grid-cols-3 grid-cols-1 gap-5">
                          {
                               favoriteItems.map(favoriteItem => {
-                                   return <div key={favoriteItem._id} className="card hover:bg-purple-200 hover:w-shadow-xl card-compact px-3 w-[382px] md:w-fit bg-base-100 shadow-xl">
+                                   return <div key={favoriteItem._id} className="hover:bg-purple-200 border-4 border-purple-400 rounded-md hover:w-shadow-xl card-compact px-3 w-[382px] md:w-fit bg-base-100 shadow-xl">
                                         <figure><img className="h-64" src={favoriteItem.foodImage} alt="Shoes" /></figure>
                                         <div className="card-body">
                                              <h2 className="text-2xl font-bold">{favoriteItem.foodName}</h2>
