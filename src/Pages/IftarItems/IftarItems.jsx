@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { HiOutlineStar, HiStar } from "react-icons/hi";
 import Rating from "react-rating";
-import FoodDetails from "../foodDetails/FoodDetails";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
@@ -9,8 +8,7 @@ import Swal from "sweetalert2";
 
 const IftarItems = () => {
 
-     const { user } = useContext(AuthContext)
-     const [showModal, setShowModal] = useState(false)
+     const { user, loading } = useContext(AuthContext)
      const [iftarItems, setIftarItems] = useState([])
 
      // pagination
@@ -44,7 +42,7 @@ const IftarItems = () => {
           fetch(`http://localhost:5000/iftar`)
                .then(res => res.json())
                .then(data => setIftarItems(data))
-     }, [])
+     }, [user, loading])
 
 
      const handleDetails = (id) => {
@@ -70,6 +68,7 @@ const IftarItems = () => {
                                         <div className="card-body">
                                              <h2 className="text-2xl font-bold">{iftarItem.foodName}</h2>
                                              <h2 className="text-lg"><span className="text-xl">Chef Name :</span> {iftarItem.chefName}</h2>
+                                             <p className='text-black'><span className='font-bold'>Description:</span> {iftarItem?.description.slice(0, 42)}</p>
                                              <Rating
                                                   className="text-yellow-500"
                                                   readonly
@@ -102,9 +101,6 @@ const IftarItems = () => {
                          </ul>
                     </nav>
                </div>
-               {/* <FoodDetails isVisible={showModal} onClose={() => {
-                    setShowModal(false)
-               }} /> */}
           </>
      );
 };

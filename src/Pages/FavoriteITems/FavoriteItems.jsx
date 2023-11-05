@@ -9,6 +9,7 @@ import Rating from "react-rating";
 const FavoriteItems = () => {
 
      const { user } = useContext(AuthContext)
+     const [reload, setReload] = useState(false)
 
      const [favoriteItems, setFavoriteItems] = useState([]);
 
@@ -18,7 +19,7 @@ const FavoriteItems = () => {
           fetch(`http://localhost:5000/favorite/${user?.email}`)
                .then(res => res.json())
                .then(data => setFavoriteItems(data))
-     }, [])
+     }, [user, reload])
 
 
      const handleDetails = (id) => {
@@ -29,6 +30,36 @@ const FavoriteItems = () => {
                     'success'
                )
           }
+     }
+
+     const handleDelete = (id) => {
+          Swal.fire({
+               title: 'Are you sure?',
+               text: "You won't be able to revert this!",
+               icon: 'warning',
+               showCancelButton: true,
+               confirmButtonColor: '#3085d6',
+               cancelButtonColor: '#d33',
+               confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+               if (result.isConfirmed) {
+                    //   
+                    fetch(`http://localhost:5000/deleteFavorite/${id}`, {
+                         method: 'DELETE',
+                    })
+                         .then(res => res.json())
+                         .then(data => {
+                              if (data.deletedCount > 0) {
+                                   setReload(!reload)
+                                   Swal.fire(
+                                        'Deleted!',
+                                        'Your coffee has been deleted.',
+                                        'success'
+                                   )
+                              }
+                         })
+               }
+          })
      }
 
 
@@ -42,7 +73,7 @@ const FavoriteItems = () => {
                                         <figure><img className="h-64" src={favoriteItem.foodImage} alt="Shoes" /></figure>
                                         <div className="card-body">
                                              <h2 className="text-2xl font-bold">{favoriteItem.foodName}</h2>
-                                             <h2 className="text-lg"><span className="text-xl">Chef Name :</span> {favoriteItem.chefName}</h2>
+                                             <h2 className="text-lg"><span className="text-xl">Chef Name :</span> {favoriteItem.chefName}</h2><p className='text-black'><span className='font-bold'>Description:</span> {favoriteItem?.description.slice(0, 42)}</p>
                                              <Rating
                                                   className="text-yellow-500"
                                                   readonly
@@ -52,10 +83,10 @@ const FavoriteItems = () => {
                                                   fullSymbol={<HiStar />}
                                              />
                                              <div className="card-actions flex justify-between">
-                                                  <Link to={`/iftarDetails/${favoriteItem._id}`}>
+                                                  <Link to={`/favoriteDetails/${favoriteItem._id}`}>
                                                        <button className="button" onClick={handleDetails}>View Details</button>
                                                   </Link>
-                                                  <button className="button2">Delete Item</button>
+                                                  <button onClick={() => handleDelete(favoriteItem._id)} className="button2">Delete Item</button>
                                              </div>
                                         </div>
                                    </div>
