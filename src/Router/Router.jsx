@@ -29,8 +29,7 @@ const Router = createBrowserRouter([
                },
                {
                     path: "iftarItems",
-                    element: <IftarItems />,
-                    loader: () => fetch('http://localhost:5000/iftar')
+                    element: <IftarItems />
                },
                {
                     path: 'iftarDetails/:id',
