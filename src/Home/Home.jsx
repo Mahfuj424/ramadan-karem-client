@@ -1,5 +1,8 @@
 import ExtraStudy from "../Components/ExtraStudy/ExtraStudy";
 import ReadQuran from "../Components/ReadQuran/ReadQuran";
+import IftarRecipe from "../Components/iftarRecipe/IftarRecipe";
+import SomeHadis from "../Components/someHadis/SomeHadis";
+import Testimonial from "../Pages/UserReview/Testimonial";
 import Banner from "./Banner/Banner";
 
 
@@ -8,7 +11,10 @@ const Home = () => {
           <div className="">
                <Banner />
                <ReadQuran />
-               <ExtraStudy/>
+               <ExtraStudy />
+               <IftarRecipe />
+               <SomeHadis/>
+               <Testimonial/>
           </div>
      );
 };

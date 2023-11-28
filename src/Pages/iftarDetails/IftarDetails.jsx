@@ -13,7 +13,7 @@ const IftarDetails = () => {
     const {user}= useContext(AuthContext)
     const { id } = useParams()
 
-    const {_id, foodia } = foodData;
+    
 
     const [disible, setDisible] = useState(false)
 
@@ -28,7 +28,7 @@ const IftarDetails = () => {
         // toast('Added Favorite')
 
         console.log(iftarItems);
-            fetch(`http://localhost:5000/addFavorite`,
+            fetch(`https://ramadan-karem-server.vercel.app/addFavorite`,
                 {
                     method: "POST",
                     headers: {
@@ -59,8 +59,16 @@ const IftarDetails = () => {
             <h1 className='text-3xl text-center mt-5'>Food Details</h1>
             <div className="hero min-h-screen rounded-xl shadow-xl bg-[#e36bf9] my-10">
                 <div className="hero-content flex flex-col">
-                    <img src={foodImage} className="w-[70%] md:h-[400px] h-[250px] rounded-lg shadow-2xl" alt='Toy Image' />
-                    <div className='w-[70%]  rounded-xl shadow-2xl p-3 border-4 flex-col gap-3 pl-5'>
+                    <img
+                        data-aos="zoom-in-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                        src={foodImage} className="w-[70%] md:h-[400px] h-[250px] rounded-lg shadow-2xl" alt='Toy Image' />
+                    <div
+                        data-aos="flip-up"
+                        data-aos-easing="linear"
+                        data-aos-duration="1500"
+                        className='w-[70%]  rounded-xl shadow-2xl p-3 border-4 flex-col gap-3 pl-5'>
                         <h1 className="py-3 text-2xl font-bold"><span className='font-bold'></span> {foodName}</h1>
                         <h2><span className='font-bold'>chef Name:</span> {chefName}</h2>
 

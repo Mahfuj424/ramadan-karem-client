@@ -15,7 +15,10 @@ const ExtraStudy = () => {
                     <div className='md:flex gap-10 mt-8 max-w-4xl mx-auto '>
                         {/* <img className='w-[400px]' src={groupStudy} alt="" /> */}
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
-                            <div>
+                            <div
+                                data-aos="fade-up"
+                                data-aos-duration="3000"
+                            >
 
                                 <p className='text-4xl font-bold'><span className='text-5xl font-bold text-blue-400'>Research From The</span> Quran</p>
                                 <p>Nullam suscipit id ante bibendum bibendum. Vivamus interdum gravida justo id venenatis. tempus velit sed, lobortis metus. Donec id tincidunt libero, eget dapibus quam. Aenean felis ex, blandit pretium pharetra eu.</p>

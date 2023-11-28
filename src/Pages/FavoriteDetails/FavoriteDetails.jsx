@@ -13,7 +13,7 @@ const FavoriteDetails = () => {
      const { id } = useParams()
 
      useEffect(() => {
-          fetch(`http://localhost:5000/favorite/${user?.email}`)
+          fetch(`https://ramadan-karem-server.vercel.app/favorite/${user?.email}`)
                .then(res => res.json())
                .then(data => setFavorite(data))
      }, [user, loading])
@@ -31,8 +31,16 @@ const FavoriteDetails = () => {
                     <h1 className='text-3xl text-center mt-5'>Food Details</h1>
                     <div className="hero min-h-screen rounded-xl shadow-xl bg-[#e36bf9] my-10">
                          <div key={findFavorite?._id} className="hero-content flex flex-col">
-                              <img src={findFavorite?.foodImage} className="w-[70%] md:h-[400px] h-[250px] rounded-lg shadow-2xl" alt='Toy Image' />
-                              <div className='w-[70%]  rounded-xl shadow-2xl p-3 border-4 flex-col gap-3 pl-5'>
+                              <img
+                                   data-aos="zoom-in-up"
+                                   data-aos-easing="linear"
+                                   data-aos-duration="1500"
+                                   src={findFavorite?.foodImage} className="w-[70%] md:h-[400px] h-[250px] rounded-lg shadow-2xl" alt='Toy Image' />
+                              <div
+                                   data-aos="flip-up"
+                                   data-aos-easing="linear"
+                                   data-aos-duration="1500"
+                                   className='w-[70%]  rounded-xl shadow-2xl p-3 border-4 flex-col gap-3 pl-5'>
                                    <h1 className="py-3 text-2xl font-bold"><span className='font-bold'></span> {findFavorite?.foodName}</h1>
                                    <h2><span className='font-bold'>chef Name:</span> {findFavorite?.chefName}</h2>
 

@@ -38,12 +38,12 @@ const Router = createBrowserRouter([
                },
                {
                     path: 'hadis',
-                    element: <Hadis/>
+                    element: <Hadis />
                },
                {
                     path: 'iftarDetails/:id',
                     element: <PrivetRoute><IftarDetails /></PrivetRoute>,
-                    loader: () => fetch(`http://localhost:5000/iftar`)
+                    loader: () => fetch(`https://ramadan-karem-server.vercel.app/iftar`)
                },
                {
                     path: "favorite",
@@ -58,8 +58,8 @@ const Router = createBrowserRouter([
                     element: <Login />
                },
                {
-                    path: 'sendMail',
-                    element: <SendEmail/>
+                    path: 'sendMail/:id',
+                    element: <PrivetRoute><SendEmail /></PrivetRoute>
                }
           ]
      }

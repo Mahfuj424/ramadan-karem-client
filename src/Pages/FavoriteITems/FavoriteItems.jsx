@@ -16,7 +16,7 @@ const FavoriteItems = () => {
 
 
      useEffect(() => {
-          fetch(`http://localhost:5000/favorite/${user?.email}`)
+          fetch(`https://ramadan-karem-server.vercel.app/favorite/${user?.email}`)
                .then(res => res.json())
                .then(data => setFavoriteItems(data))
      }, [user, reload])
@@ -44,7 +44,7 @@ const FavoriteItems = () => {
           }).then((result) => {
                if (result.isConfirmed) {
                     //   
-                    fetch(`http://localhost:5000/deleteFavorite/${id}`, {
+                    fetch(`https://ramadan-karem-server.vercel.app/deleteFavorite/${id}`, {
                          method: 'DELETE',
                     })
                          .then(res => res.json())
@@ -66,10 +66,14 @@ const FavoriteItems = () => {
      return (
           <div>
                <div className="my-10">
-                    <div className="container grid md:grid-cols-3 grid-cols-1 gap-5">
+                    <div className="container md:px-0 px-1 grid md:grid-cols-3 grid-cols-1 gap-5">
                          {
                               favoriteItems.map(favoriteItem => {
-                                   return <div key={favoriteItem._id} className="hover:bg-purple-200 border-4 border-purple-400 rounded-md hover:w-shadow-xl card-compact px-3 w-[382px] md:w-fit bg-base-100 shadow-xl">
+                                   return <div
+                                        data-aos="zoom-in-up"
+                                        data-aos-easing="linear"
+                                        data-aos-duration="1500"
+                                        key={favoriteItem._id} className="hover:bg-purple-200 border-4 border-purple-400 rounded-md hover:w-shadow-xl card-compact px-3 w-[382px] md:w-fit bg-base-100 shadow-xl">
                                         <figure><img className="h-64" src={favoriteItem.foodImage} alt="Shoes" /></figure>
                                         <div className="card-body">
                                              <h2 className="text-2xl font-bold">{favoriteItem.foodName}</h2>

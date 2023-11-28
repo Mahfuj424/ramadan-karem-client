@@ -4,7 +4,7 @@ import { useEffect } from "react";
 const FoodDetails = ({ isVisible, onClose }) => {
 
      useEffect(() => {
-          fetch(`http://localhost:5000/iftar`)
+          fetch(`https://ramadan-karem-server.vercel.app/iftar`)
                .then(res => res.json())
                .then(data => console.log(data))
      }, [])
