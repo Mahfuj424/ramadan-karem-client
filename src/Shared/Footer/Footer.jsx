@@ -5,10 +5,10 @@ import { BsMoonStarsFill } from 'react-icons/bs';
 
 const Footer = () => {
     return (
-        <footer className=" bg-[#e347fe] mt-10">
-            <div className="footer p-10 bg-[#e347fe] text-base-content">
+        <footer className=" bg-[#ec81fe] mt-10">
+            <div className="footer p-10 bg-[#ec81fe] text-base-content">
                 <div>
-                    <BsMoonStarsFill className='text-4xl'/>
+                    <BsMoonStarsFill className='text-4xl text-white'/>
                     <p className='text-lg'>Ramadan Karem<br /> Bangladesh Islamic Industries Ltd.<br />Providing reliable tech since 1992</p>
                 </div>
                 <div>

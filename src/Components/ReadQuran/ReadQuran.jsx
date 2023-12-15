@@ -15,7 +15,7 @@ const ReadQuran = () => {
                               data-aos="flip-left"
                               data-aos-duration="3000"
                               className="md:mt-0 mt-10 md:px-0 px-3">
-                              <h1 className="text-5xl font-bold">Every Day try to <br /> <span className="text-purple-400">read quran</span></h1>
+                              <h1 className="text-5xl text-gray-600 font-bold">Every Day try to <br /> <span className="text-purple-400">read quran</span></h1>
                               <button className="button mt-10">Read Now ➤</button>
                          </div>
                     </div>

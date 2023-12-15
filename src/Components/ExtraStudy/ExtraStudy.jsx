@@ -20,7 +20,7 @@ const ExtraStudy = () => {
                                 data-aos-duration="3000"
                             >
 
-                                <p className='text-4xl font-bold'><span className='text-5xl font-bold text-blue-400'>Research From The</span> Quran</p>
+                                <p className='text-4xl text-gray-600 font-bold'><span className='text-5xl font-bold text-gray-600'>Research From The</span> Quran</p>
                                 <p>Nullam suscipit id ante bibendum bibendum. Vivamus interdum gravida justo id venenatis. tempus velit sed, lobortis metus. Donec id tincidunt libero, eget dapibus quam. Aenean felis ex, blandit pretium pharetra eu.</p>
                                 <button className='button mt-5'>Sign Up Now</button>
                             </div>

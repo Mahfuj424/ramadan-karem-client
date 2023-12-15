@@ -56,7 +56,7 @@ const Testimonial = () => {
   ];
 
   return (
-    <div className="testimonial-container rounded-xl mt-10 p-10 container bg-[#e347fe]">
+    <div className="testimonial-container rounded-xl mt-10 p-10 container bg-[#ec81fe]">
       <h1 data-aos="fade-up"
         data-aos-easing="linear"
         data-aos-duration="1500" className="text-4xl font-bold text-center my-10">All Customer <span className="text-white">Review</span> Here</h1>

@@ -31,7 +31,7 @@ const Navbar = () => {
      </div>
 
      return (
-          <div className='fixed bg-[#be19db] font-semibold pt-4 w-full z-10 opacity-80'>
+          <div className='fixed bg-[#b93bcf] font-semibold pt-4 w-full z-10 opacity-80'>
                <div className="navbar container p-0">
                     <div className="navbar-start">
                          <div className="dropdown">
@@ -43,7 +43,7 @@ const Navbar = () => {
                               </ul>
                          </div>
                          <Link to='/' className="text-xl  flex items-center cursor-pointer">
-                              <span className='text-black text-3xl font-bold ms-2'><BsMoonStarsFill /></span>
+                              <span className='text-white text-3xl font-bold ms-2'><BsMoonStarsFill /></span>
                          </Link>
                     </div>
                     <div className="navbar-center hidden lg:flex">
